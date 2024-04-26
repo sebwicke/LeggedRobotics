@@ -8,7 +8,7 @@
 %[q1, dq1] pre impact conditions - should be negative for both
 
 q1_ic = -30*pi/180;
-dq1_ic = -140*pi/180;
+dq1_ic = -120*pi/180;
 
 z_minus = [q1_ic dq1_ic]; 
 
@@ -44,9 +44,9 @@ f0 = [z_minus, alpha, gamma];   %parameters that need to be optimized
 % Lower and upper bounds for optimizer - [q1 q1_dot, alpha q2, alpha q3]
 %
 % epsilon for angles
-eps = 5*pi/180;
+eps = 2*pi/180;
 % epsilon for velocity
-eps_v = 5;
+eps_v = 2;
 lb = [z_minus(1)-eps, z_minus(2)-eps_v, alpha-eps, gamma-eps];
 ub = [z_minus(1)+eps, z_minus(2)+eps_v, alpha+eps, gamma+eps];
 
