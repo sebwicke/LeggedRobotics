@@ -30,6 +30,23 @@ delta = 0.5;
 xlim_min = P2_i(1) - delta;
 xlim_max = -n*P2_i(1) + delta;
 
+flag_save_video =0;
+
+if flag_save_video
+  % prepare video recording
+  disp('Begin recording the video')
+  files = dir('*.mat') ;
+  % Nv = length(files) ;
+  
+  % create the video writer with 1 fps
+  writerObj = VideoWriter('slower_walking', 'MPEG-4');
+
+  writerObj.FrameRate = 30; % fps
+
+  % open the video writer
+  open(writerObj);
+end
+
 % Defining figure properties
 fh = figure('Name','3 link biped model in the sagittal plane',...
     'Renderer','opengl',...
@@ -87,4 +104,15 @@ for i = 1:length(t)
 
     drawnow limitrate
     %pause(0.02);
+
+    if flag_save_video
+      F = getframe(fh);
+      writeVideo(writerObj, F);
+    end
+end
+
+if flag_save_video
+  close(writerObj);
+  disp('Sucessfully generated the video')
+  beep
 end

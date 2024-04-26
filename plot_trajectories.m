@@ -1,4 +1,4 @@
-% Plots trajectories for anlges and velocities
+ % Plots trajectories for anlges and velocities
 %   phase portrait for q_t vs dq_t
 %
 % Input:
