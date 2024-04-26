@@ -67,4 +67,19 @@ xlabel('t (s)')
 ylabel('dq (rads/s)')
 legend('dq_1','dq_2','dq_3')
 
+figure(4)
+plot(x(:,2),x(:,5))
+grid on
+title('Phase portrait of q_2 and dq_2')
+xlabel('q_1 (rads)')
+ylabel('dq_1 (rads/s)')
+
+figure(5)
+plot(x(:,3),x(:,6))
+grid on
+title('Phase portrait of q_3 and dq_3')
+xlabel('q_1 (rads)')
+ylabel('dq_1 (rads/s)')
+
+
 end

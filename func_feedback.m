@@ -21,10 +21,10 @@
 %
 function u = func_feedback(x,alpha,s_params)
 % gains
-kp1 = 200;
-kp2 = 200;
-kd1 = 100;
-kd2 = 100;
+kp1 = 700;
+kp2 = 700;
+kd1 = 200;
+kd2 = 200;
 
 % Seperating inputs
 q = x(1:3);
